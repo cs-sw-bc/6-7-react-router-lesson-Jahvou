@@ -40,7 +40,9 @@ function Home() {
                     className="user-avatar"
                   />
                   <div className="post-info">
+                    <Link to={`/user/${post.id}`}> 
                     <h4>User {post.id}</h4>
+                    </Link>
                     <p>Software Developer</p>
                   </div>
               </div>

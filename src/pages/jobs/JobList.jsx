@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { NavLink, Outlet } from 'react-router-dom'
+
 
 function JobList() {
   const [jobs, setJobs] = useState([])
@@ -55,6 +57,11 @@ function JobList() {
   }, [])
 
   return (
+    <>
+    <nav className='nav-links'>
+      <NavLink to="/jobs/full-time" className='nav-link'>Full Time</NavLink>
+      <NavLink to="/jobs/part-time" className='nav-link'>Part Time</NavLink>
+    </nav>
     <div className="jobs-list">
       Job searching can be a long and stressful activity. I have often heard it referred to as a full-time job in itself. This really is true! With the amount of time you take to search out opportunities, do research and target your resumes and cover letters, you’re already looking at a significant time investment. That’s not even including time for interviews. And waiting around, wondering if you’ll hear back or getting a rejection can all take its toll. Having said all that, job searching is a necessary part of life. How then can you help limit your stress and other negative feelings during this time? There are many ways.
 
@@ -68,6 +75,8 @@ Finally, you should expect some level of rejection. Practice positive self-talk 
 
 Remember a job search can take time. Don’t get frustrated if your job search takes longer than you expected. Remember to get organized, be prepared, and take care of yourself. You will succeed!
     </div>
+    <Outlet/>
+    </>
   )
 }
 
